@@ -49,13 +49,17 @@
         <li>Hotelldrivende renhold</li>
       </ul>
 
-      <form name="kontakt" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="kontakt" />
-        <input type="text" name="Navn" placeholder="Fullt navn" required />
-        <input type="email" name="E‑post" placeholder="E‑post" required />
-        <input type="tel" name="Telefon" placeholder="Telefon" required />
-        <button type="submit">Få gratis vurdering</button>
-      </form>
+<form name="kontakt" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+  <!-- skjult felt Netlify bruker -->
+  <input type="hidden" name="form-name" value="kontakt" />
+  <!-- honeypot mot spam -->
+  <input type="hidden" name="bot-field" />
+
+  <input type="text"  name="Navn"    placeholder="Navn"     required />
+  <input type="email" name="Epost"   placeholder="E-post"   required />
+  <input type="tel"   name="Telefon" placeholder="Telefon"  required />
+  <button type="submit">Få gratis vurdering</button>
+</form>
     </section>
 
     <footer>
